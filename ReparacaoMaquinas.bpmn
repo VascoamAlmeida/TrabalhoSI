@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="0d4ab51" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.6.0">
+  <bpmn:collaboration id="Collaboration_1k5rl5y">
+    <bpmn:extensionElements />
+    <bpmn:participant id="Participant_RequestRepair" name="Reparação de máquina Sem Garantia" processRef="Process_RequestRepair" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_RequestRepair" name="Reparação de máquinas " isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="UserTaskForm_1r47jh0">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "1bcb3a3"
+  },
+  "schemaVersion": 17,
+  "id": "FormSchedule",
+  "components": [
+    {
+      "text": "### Schedule Repair for Your Device",
+      "type": "text",
+      "id": "Heading_0",
+      "layout": {
+        "row": "row_0",
+        "columns": 13
+      }
+    },
+    {
+      "label": "OrderId",
+      "type": "textfield",
+      "layout": {
+        "row": "row_0",
+        "columns": 3
+      },
+      "id": "Field_11vfjss",
+      "key": "orderId",
+      "disabled": false
+    },
+    {
+      "text": "##### Client Information",
+      "type": "text",
+      "id": "Subheading_1",
+      "layout": {
+        "row": "row_1",
+        "columns": null
+      }
+    },
+    {
+      "label": "Client",
+      "type": "textfield",
+      "id": "Textfield_2",
+      "validate": {
+        "minLength": 2,
+        "required": false
+      },
+      "key": "clientName",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      }
+    },
+    {
+      "label": "Contact number",
+      "type": "textfield",
+      "id": "Textfield_3",
+      "validate": {
+        "minLength": 1,
+        "maxLength": 50,
+        "required": false
+      },
+      "key": "contactNumber",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      }
+    },
+    {
+      "text": "##### Machine Information",
+      "type": "text",
+      "layout": {
+        "row": "Row_1r53og4",
+        "columns": null
+      },
+      "id": "Field_1h0lqvl"
+    },
+    {
+      "label": "Machine Brand",
+      "type": "textfield",
+      "layout": {
+        "row": "row_3",
+        "columns": null
+      },
+      "id": "Field_0i7epr1",
+      "key": "machineBrand"
+    },
+    {
+      "label": "Machine Model",
+      "type": "textfield",
+      "layout": {
+        "row": "row_3",
+        "columns": null
+      },
+      "id": "Field_1pj0j05",
+      "key": "machineModel"
+    },
+    {
+      "label": "Issue Description",
+      "type": "textarea",
+      "id": "Textarea_8",
+      "validate": {
+        "minLength": 1,
+        "maxLength": 200,
+        "required": false
+      },
+      "key": "issueDescription",
+      "layout": {
+        "row": "Row_0k2ndhc",
+        "columns": null
+      }
+    },
+    {
+      "text": "##### Scheduling Details",
+      "type": "text",
+      "id": "Subheading_5",
+      "layout": {
+        "row": "row_4",
+        "columns": null
+      }
+    },
+    {
+      "subtype": "date",
+      "type": "datetime",
+      "id": "Date_6",
+      "dateLabel": "Repair Date",
+      "validate": {
+        "required": false
+      },
+      "key": "repairDate",
+      "layout": {
+        "row": "row_4",
+        "columns": 12
+      }
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_2b9k9l5">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "1bcb3a3"
+  },
+  "schemaVersion": 17,
+  "id": "form-Repair",
+  "components": [
+    {
+      "text": "### Repair Machine",
+      "type": "text",
+      "id": "Heading_0",
+      "layout": {
+        "row": "row_0",
+        "columns": 13
+      }
+    },
+    {
+      "label": "OrderId",
+      "type": "textfield",
+      "layout": {
+        "row": "row_0",
+        "columns": null
+      },
+      "id": "Field_169wqxf",
+      "key": "orderId",
+      "disabled": true
+    },
+    {
+      "text": "##### Client Information Section",
+      "type": "text",
+      "id": "Subheading_1",
+      "layout": {
+        "row": "row_1",
+        "columns": null
+      }
+    },
+    {
+      "label": "Client Name",
+      "type": "textfield",
+      "id": "Textfield_2",
+      "validate": {
+        "minLength": 2,
+        "required": false
+      },
+      "key": "clientName",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      },
+      "disabled": true
+    },
+    {
+      "label": "Contact Number",
+      "type": "textfield",
+      "id": "Textfield_3",
+      "validate": {
+        "minLength": 1,
+        "maxLength": 12,
+        "required": false
+      },
+      "key": "contactNumber",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      },
+      "disabled": true
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_0c6ljaq",
+        "columns": 16
+      },
+      "id": "Field_1ra0cm0"
+    },
+    {
+      "text": "##### Machine Section",
+      "type": "text",
+      "id": "Subheading_5",
+      "layout": {
+        "row": "row_3",
+        "columns": null
+      }
+    },
+    {
+      "label": "Machine Brand",
+      "type": "textfield",
+      "id": "Textfield_6",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 20,
+        "required": false
+      },
+      "key": "machineBrand",
+      "layout": {
+        "row": "row_4",
+        "columns": null
+      },
+      "disabled": true
+    },
+    {
+      "label": "Machine Model",
+      "type": "textfield",
+      "id": "Textfield_7",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 20,
+        "required": false
+      },
+      "key": "machineModel",
+      "layout": {
+        "row": "row_4",
+        "columns": null
+      },
+      "disabled": true
+    },
+    {
+      "text": "##### Issue",
+      "type": "text",
+      "layout": {
+        "row": "Row_10tc6i1",
+        "columns": 2
+      },
+      "id": "Field_0ecw2xl"
+    },
+    {
+      "label": "Issue Description",
+      "type": "textarea",
+      "id": "Textarea_9",
+      "validate": {
+        "minLength": 1,
+        "maxLength": 500,
+        "required": false
+      },
+      "key": "issueDescription",
+      "layout": {
+        "row": "Row_10tc6i1",
+        "columns": 14
+      },
+      "disabled": false
+    },
+    {
+      "label": "Client Decision",
+      "values": [
+        {
+          "label": "Accept Repair",
+          "value": "accepted"
+        },
+        {
+          "label": "Reject Repair",
+          "value": "rejected"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_1lrqn1y",
+        "columns": 16
+      },
+      "id": "Field_0tii5ne",
+      "key": "decision",
+      "defaultValue": "accepted",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_18fllcr">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "0d4ab51"
+  },
+  "schemaVersion": 17,
+  "id": "Form_Report",
+  "components": [
+    {
+      "text": "### Repair Machine",
+      "type": "text",
+      "id": "Heading_0",
+      "layout": {
+        "row": "row_0",
+        "columns": 13
+      }
+    },
+    {
+      "label": "OrderId",
+      "type": "textfield",
+      "layout": {
+        "row": "row_0",
+        "columns": null
+      },
+      "id": "Field_169wqxf",
+      "key": "orderId",
+      "disabled": true
+    },
+    {
+      "text": "##### Client Information Section",
+      "type": "text",
+      "id": "Subheading_1",
+      "layout": {
+        "row": "row_1",
+        "columns": null
+      }
+    },
+    {
+      "label": "Client Name",
+      "type": "textfield",
+      "id": "Textfield_2",
+      "validate": {
+        "minLength": 2,
+        "required": false
+      },
+      "key": "clientName",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      },
+      "disabled": true
+    },
+    {
+      "label": "Contact Number",
+      "type": "textfield",
+      "id": "Textfield_3",
+      "validate": {
+        "minLength": 1,
+        "maxLength": 12,
+        "required": false
+      },
+      "key": "contactNumber",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      },
+      "disabled": true
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_0c6ljaq",
+        "columns": 16
+      },
+      "id": "Field_1ra0cm0"
+    },
+    {
+      "text": "##### Machine Section",
+      "type": "text",
+      "id": "Subheading_5",
+      "layout": {
+        "row": "row_3",
+        "columns": null
+      }
+    },
+    {
+      "label": "Machine Brand",
+      "type": "textfield",
+      "id": "Textfield_6",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 20,
+        "required": false
+      },
+      "key": "machineBrand",
+      "layout": {
+        "row": "row_4",
+        "columns": null
+      },
+      "disabled": true
+    },
+    {
+      "label": "Machine Model",
+      "type": "textfield",
+      "id": "Textfield_7",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 20,
+        "required": false
+      },
+      "key": "machineModel",
+      "layout": {
+        "row": "row_4",
+        "columns": null
+      },
+      "disabled": true
+    },
+    {
+      "text": "##### Issue",
+      "type": "text",
+      "layout": {
+        "row": "Row_10tc6i1",
+        "columns": 2
+      },
+      "id": "Field_0ecw2xl"
+    },
+    {
+      "label": "Issue Description",
+      "type": "textarea",
+      "id": "Textarea_9",
+      "validate": {
+        "minLength": 1,
+        "maxLength": 500,
+        "required": false
+      },
+      "key": "issueDescription",
+      "layout": {
+        "row": "Row_10tc6i1",
+        "columns": 14
+      },
+      "disabled": true
+    },
+    {
+      "label": "Client Decision",
+      "values": [
+        {
+          "label": "Accept Repair",
+          "value": "accepted"
+        },
+        {
+          "label": "Reject Repair",
+          "value": "rejected"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_1lrqn1y",
+        "columns": 16
+      },
+      "id": "Field_0tii5ne",
+      "key": "decision",
+      "defaultValue": "accepted",
+      "validate": {
+        "required": true
+      },
+      "disabled": true
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_0g29jls",
+        "columns": null
+      },
+      "id": "Field_02cjfr0"
+    },
+    {
+      "text": "##### Report",
+      "type": "text",
+      "layout": {
+        "row": "Row_1ibz68h",
+        "columns": 2
+      },
+      "id": "Field_01kihuj"
+    },
+    {
+      "label": "Solution",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1ibz68h",
+        "columns": null
+      },
+      "id": "Field_0f10oo2",
+      "key": "report"
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_1syz50a",
+        "columns": null
+      },
+      "id": "Field_14ac1t9"
+    },
+    {
+      "label": "Client Signature",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0ham2a6",
+        "columns": 8
+      },
+      "id": "Field_1g02bno",
+      "key": "clientSignature",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Mechanic Signature",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0ham2a6",
+        "columns": 8
+      },
+      "id": "Field_1ryjm56",
+      "key": "employeeSignature"
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:laneSet id="LaneSet_1gwf4nk">
+      <bpmn:lane id="Lane_1unqa32" name="Mecânico">
+        <bpmn:flowNodeRef>Event_0vl6rzg</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_Repair</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_IdentifyProblem</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_CheckAnswer</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_1iy8r43</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_ArchiveRepair</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_ReparacaoConcluida</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_CancelRepair</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_StartRepair</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_EndRepair</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_0hmop69</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_Notification</bpmn:flowNodeRef>
+        <bpmn:childLaneSet id="LaneSet_15fe5y7" />
+      </bpmn:lane>
+      <bpmn:lane id="Lane_0jxqm51" name="Cliente">
+        <bpmn:flowNodeRef>StartEvent_PedidoReparacao</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_SignRepair</bpmn:flowNodeRef>
+        <bpmn:childLaneSet id="LaneSet_1ud6gyl" />
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1flffqw" name="Escritório">
+        <bpmn:flowNodeRef>Activity_ScheduleRepair</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_ReceiveOrder</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_ReceiveReport</bpmn:flowNodeRef>
+        <bpmn:childLaneSet id="LaneSet_12wt9gi" />
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:userTask id="Activity_ScheduleRepair" name="Agendar visita técnica">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_1r47jh0" />
+        <zeebe:properties>
+          <zeebe:property name="camundaModeler:exampleOutputJson" value="{&#34;orderId&#34;:&#34;1&#34;,&#34;clientName&#34;:&#34;John&#34;,&#34;contactNumber&#34;:&#34;911111111&#34;,&#34;machineBrand&#34;:&#34;Brand1&#34;,&#34;machineModel&#34;:&#34;Model1&#34;,&#34;issueDescription&#34;:&#34;Não liga&#34;,&#34;repairDate&#34;:&#34;2024-12-02&#34;}" />
+        </zeebe:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_05emuyj</bpmn:incoming>
+      <bpmn:outgoing>Flow_1eyex0m</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:startEvent id="StartEvent_PedidoReparacao" name="Pedido de reparação">
+      <bpmn:outgoing>Flow_0dth63b</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_0vl6rzg" name="Reparação rejeitada">
+      <bpmn:incoming>Flow_17c1wke</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:exclusiveGateway id="Gateway_Repair" name="Reparação?">
+      <bpmn:extensionElements />
+      <bpmn:incoming>Flow_13i6ibn</bpmn:incoming>
+      <bpmn:outgoing>Flow_RejectRepair</bpmn:outgoing>
+      <bpmn:outgoing>Flow_AcceptRepair</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:manualTask id="Activity_IdentifyProblem" name="Identificar problema da máquina">
+      <bpmn:incoming>Flow_1et1zbt</bpmn:incoming>
+      <bpmn:outgoing>Flow_1xiahk9</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="Activity_CheckAnswer" name="Avaliar resposta de Cliente">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_2b9k9l5" />
+        <zeebe:properties>
+          <zeebe:property name="camundaModeler:exampleOutputJson" value="{&#34;orderId&#34;:&#34;1&#34;,&#34;clientName&#34;:&#34;John&#34;,&#34;contactNumber&#34;:&#34;911111111&#34;,&#34;machineBrand&#34;:&#34;Brand1&#34;,&#34;machineModel&#34;:&#34;Model1&#34;,&#34;issueDescription&#34;:&#34;Não liga&#34;,&#34;decision&#34;:&#34;accepted&#34;}" />
+        </zeebe:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1xiahk9</bpmn:incoming>
+      <bpmn:outgoing>Flow_13i6ibn</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:parallelGateway id="Gateway_1iy8r43">
+      <bpmn:incoming>Flow_1afzky9</bpmn:incoming>
+      <bpmn:incoming>Flow_0c148l4</bpmn:incoming>
+      <bpmn:outgoing>Flow_180mb34</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:manualTask id="Activity_SignRepair" name="Assinar Relatório">
+      <bpmn:incoming>Flow_1mc40zd</bpmn:incoming>
+      <bpmn:outgoing>Flow_0c148l4</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:serviceTask id="Activity_ArchiveRepair" name="Arquivar Reparação">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="saveRepair" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_180mb34</bpmn:incoming>
+      <bpmn:outgoing>Flow_1wbjo66</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_ReparacaoConcluida" name="Reparação Concluída">
+      <bpmn:incoming>Flow_1wbjo66</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Activity_ReceiveOrder" name="Receber a ordem de serviço">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="marcarReparacao" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0dth63b</bpmn:incoming>
+      <bpmn:outgoing>Flow_05emuyj</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_CancelRepair" name="Cancelar Reparação">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="cancelaReparacao" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_RejectRepair</bpmn:incoming>
+      <bpmn:outgoing>Flow_17c1wke</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_StartRepair" name="Iniciar Reparação">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="iniciarReparacao" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_AcceptRepair</bpmn:incoming>
+      <bpmn:outgoing>Flow_0tgmhmm</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="Activity_EndRepair" name="Concluir Reparação">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_18fllcr" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0tgmhmm</bpmn:incoming>
+      <bpmn:outgoing>Flow_0suw28y</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:parallelGateway id="Gateway_0hmop69">
+      <bpmn:incoming>Flow_0suw28y</bpmn:incoming>
+      <bpmn:outgoing>Flow_1mc40zd</bpmn:outgoing>
+      <bpmn:outgoing>Flow_011pts5</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:serviceTask id="Activity_ReceiveReport" name="Receber Relatório">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="receiveReport" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_011pts5</bpmn:incoming>
+      <bpmn:outgoing>Flow_1afzky9</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_Notification" name="Receber notificação">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="receiveNotification" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1eyex0m</bpmn:incoming>
+      <bpmn:outgoing>Flow_1et1zbt</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_05emuyj" sourceRef="Activity_ReceiveOrder" targetRef="Activity_ScheduleRepair" />
+    <bpmn:sequenceFlow id="Flow_1eyex0m" sourceRef="Activity_ScheduleRepair" targetRef="Activity_Notification" />
+    <bpmn:sequenceFlow id="Flow_0dth63b" sourceRef="StartEvent_PedidoReparacao" targetRef="Activity_ReceiveOrder" />
+    <bpmn:sequenceFlow id="Flow_17c1wke" sourceRef="Activity_CancelRepair" targetRef="Event_0vl6rzg" />
+    <bpmn:sequenceFlow id="Flow_13i6ibn" sourceRef="Activity_CheckAnswer" targetRef="Gateway_Repair" />
+    <bpmn:sequenceFlow id="Flow_AcceptRepair" name="Aceita" sourceRef="Gateway_Repair" targetRef="Activity_StartRepair">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=decision="accepted"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_RejectRepair" name="Rejeita" sourceRef="Gateway_Repair" targetRef="Activity_CancelRepair">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=decision="rejected"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1et1zbt" sourceRef="Activity_Notification" targetRef="Activity_IdentifyProblem" />
+    <bpmn:sequenceFlow id="Flow_1xiahk9" sourceRef="Activity_IdentifyProblem" targetRef="Activity_CheckAnswer" />
+    <bpmn:sequenceFlow id="Flow_0c148l4" sourceRef="Activity_SignRepair" targetRef="Gateway_1iy8r43" />
+    <bpmn:sequenceFlow id="Flow_1afzky9" sourceRef="Activity_ReceiveReport" targetRef="Gateway_1iy8r43" />
+    <bpmn:sequenceFlow id="Flow_180mb34" sourceRef="Gateway_1iy8r43" targetRef="Activity_ArchiveRepair" />
+    <bpmn:sequenceFlow id="Flow_1mc40zd" sourceRef="Gateway_0hmop69" targetRef="Activity_SignRepair" />
+    <bpmn:sequenceFlow id="Flow_1wbjo66" sourceRef="Activity_ArchiveRepair" targetRef="EndEvent_ReparacaoConcluida" />
+    <bpmn:sequenceFlow id="Flow_0tgmhmm" sourceRef="Activity_StartRepair" targetRef="Activity_EndRepair" />
+    <bpmn:sequenceFlow id="Flow_0suw28y" sourceRef="Activity_EndRepair" targetRef="Gateway_0hmop69" />
+    <bpmn:sequenceFlow id="Flow_011pts5" sourceRef="Gateway_0hmop69" targetRef="Activity_ReceiveReport" />
+  </bpmn:process>
+  <bpmn:message id="Message_0p8u630" name="Message_Receive">
+    <bpmn:extensionElements>
+      <zeebe:subscription correlationKey="=orderId" />
+    </bpmn:extensionElements>
+  </bpmn:message>
+  <bpmn:message id="Message_3e8o0o2" name="Message_ReceiveReport">
+    <bpmn:extensionElements>
+      <zeebe:subscription correlationKey="=sendReport = &#34;true&#34;" />
+    </bpmn:extensionElements>
+  </bpmn:message>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1k5rl5y">
+      <bpmndi:BPMNShape id="Participant_0kmlgtl_di" bpmnElement="Participant_RequestRepair" isHorizontal="true">
+        <dc:Bounds x="160" y="85" width="1550" height="530" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1unqa32_di" bpmnElement="Lane_1unqa32" isHorizontal="true">
+        <dc:Bounds x="190" y="213" width="1520" height="252" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0jxqm51_di" bpmnElement="Lane_0jxqm51" isHorizontal="true">
+        <dc:Bounds x="190" y="85" width="1520" height="128" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1flffqw_di" bpmnElement="Lane_1flffqw" isHorizontal="true">
+        <dc:Bounds x="190" y="465" width="1520" height="150" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ge7l5o_di" bpmnElement="Activity_ScheduleRepair">
+        <dc:Bounds x="410" y="515" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_PedidoReparacao" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="242" y="127" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="239" y="163" width="52" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0vl6rzg_di" bpmnElement="Event_0vl6rzg" bioc:stroke="#831311" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#831311">
+        <dc:Bounds x="1002" y="250" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="996" y="286" width="58" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_06urpwt_di" bpmnElement="Gateway_Repair" isMarkerVisible="true">
+        <dc:Bounds x="835" y="360" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="830" y="417" width="61" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ok4hwr_di" bpmnElement="Activity_IdentifyProblem">
+        <dc:Bounds x="550" y="345" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0nmgc2b_di" bpmnElement="Activity_CheckAnswer">
+        <dc:Bounds x="690" y="345" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1iy8r43_di" bpmnElement="Gateway_1iy8r43">
+        <dc:Bounds x="1385" y="360" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_12pl7kc_di" bpmnElement="Activity_SignRepair">
+        <dc:Bounds x="1250" y="105" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1dmt9hy_di" bpmnElement="Activity_ArchiveRepair">
+        <dc:Bounds x="1490" y="345" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_112k1vc_di" bpmnElement="EndEvent_ReparacaoConcluida" bioc:stroke="#205022" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#205022">
+        <dc:Bounds x="1642" y="367" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1637" y="405" width="58" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0auk01b_di" bpmnElement="Activity_ReceiveOrder">
+        <dc:Bounds x="249" y="515" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_08gplpn_di" bpmnElement="Activity_CancelRepair">
+        <dc:Bounds x="810" y="228" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0qc0kzm_di" bpmnElement="Activity_StartRepair">
+        <dc:Bounds x="990" y="345" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ofppax_di" bpmnElement="Activity_EndRepair">
+        <dc:Bounds x="1140" y="345" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0hmop69_di" bpmnElement="Gateway_0hmop69">
+        <dc:Bounds x="1275" y="360" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0r2wj1z_di" bpmnElement="Activity_ReceiveReport">
+        <dc:Bounds x="1250" y="505" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1i9ixzi_di" bpmnElement="Activity_Notification">
+        <dc:Bounds x="410" y="345" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_05emuyj_di" bpmnElement="Flow_05emuyj">
+        <di:waypoint x="349" y="555" />
+        <di:waypoint x="410" y="555" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1eyex0m_di" bpmnElement="Flow_1eyex0m">
+        <di:waypoint x="460" y="515" />
+        <di:waypoint x="460" y="425" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0dth63b_di" bpmnElement="Flow_0dth63b">
+        <di:waypoint x="278" y="145" />
+        <di:waypoint x="299" y="145" />
+        <di:waypoint x="299" y="515" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17c1wke_di" bpmnElement="Flow_17c1wke">
+        <di:waypoint x="910" y="268" />
+        <di:waypoint x="1002" y="268" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13i6ibn_di" bpmnElement="Flow_13i6ibn">
+        <di:waypoint x="790" y="385" />
+        <di:waypoint x="835" y="385" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0sen3fh_di" bpmnElement="Flow_AcceptRepair">
+        <di:waypoint x="885" y="385" />
+        <di:waypoint x="990" y="385" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="921" y="388" width="33" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1sni1q4_di" bpmnElement="Flow_RejectRepair">
+        <di:waypoint x="860" y="360" />
+        <di:waypoint x="860" y="308" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="863" y="334" width="34" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1et1zbt_di" bpmnElement="Flow_1et1zbt">
+        <di:waypoint x="510" y="385" />
+        <di:waypoint x="550" y="385" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xiahk9_di" bpmnElement="Flow_1xiahk9">
+        <di:waypoint x="650" y="385" />
+        <di:waypoint x="690" y="385" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0c148l4_di" bpmnElement="Flow_0c148l4">
+        <di:waypoint x="1350" y="145" />
+        <di:waypoint x="1410" y="145" />
+        <di:waypoint x="1410" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1afzky9_di" bpmnElement="Flow_1afzky9">
+        <di:waypoint x="1350" y="545" />
+        <di:waypoint x="1410" y="545" />
+        <di:waypoint x="1410" y="410" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_180mb34_di" bpmnElement="Flow_180mb34">
+        <di:waypoint x="1435" y="385" />
+        <di:waypoint x="1490" y="385" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mc40zd_di" bpmnElement="Flow_1mc40zd">
+        <di:waypoint x="1300" y="360" />
+        <di:waypoint x="1300" y="185" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1wbjo66_di" bpmnElement="Flow_1wbjo66">
+        <di:waypoint x="1590" y="385" />
+        <di:waypoint x="1642" y="385" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0tgmhmm_di" bpmnElement="Flow_0tgmhmm">
+        <di:waypoint x="1090" y="385" />
+        <di:waypoint x="1140" y="385" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0suw28y_di" bpmnElement="Flow_0suw28y">
+        <di:waypoint x="1240" y="385" />
+        <di:waypoint x="1275" y="385" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_011pts5_di" bpmnElement="Flow_011pts5">
+        <di:waypoint x="1300" y="410" />
+        <di:waypoint x="1300" y="505" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

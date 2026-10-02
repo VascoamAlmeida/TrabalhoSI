@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="0d4ab51" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.6.0">
+  <bpmn:collaboration id="Collaboration_1l1vaja">
+    <bpmn:participant id="Participant_MachineSale" name="MachineSale" processRef="Process_RequestMachineSale" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_RequestMachineSale" name="Request Machine Sale" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="UserTaskForm_2ddgmo0">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "1bcb3a3"
+  },
+  "schemaVersion": 17,
+  "id": "Form_Contract",
+  "components": [
+    {
+      "text": "# Contrato",
+      "type": "text",
+      "layout": {
+        "row": "Row_009mutk",
+        "columns": null
+      },
+      "id": "Field_1igcoto"
+    },
+    {
+      "label": "Nome Cliente",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0l6r26g",
+        "columns": null
+      },
+      "id": "Field_17xgcoa",
+      "key": "customerName",
+      "readonly": true,
+      "disabled": true
+    },
+    {
+      "label": "Nome empresa",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_05xxdcb",
+        "columns": null
+      },
+      "id": "Field_0im0o0t",
+      "key": "companyName",
+      "readonly": true,
+      "disabled": true
+    },
+    {
+      "label": "Máquina vendida",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0kyzljy",
+        "columns": null
+      },
+      "id": "Field_04eyh4b",
+      "key": "machineSold",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 100
+      }
+    },
+    {
+      "label": "Preço",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0mioouf",
+        "columns": null
+      },
+      "id": "Field_1eksejz",
+      "key": "Price",
+      "validate": {
+        "required": true,
+        "minLength": 1,
+        "maxLength": 99999999
+      }
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_3q0vpne">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "0d4ab51"
+  },
+  "schemaVersion": 17,
+  "id": "Form_MachineRequirements",
+  "components": [
+    {
+      "text": "# Requisitos máquina\n\nIndique todos requisitos que o cliente pretende na máquina",
+      "type": "text",
+      "layout": {
+        "row": "Row_0htste8",
+        "columns": null
+      },
+      "id": "Field_1wo40n3"
+    },
+    {
+      "label": "Nome do Cliente",
+      "type": "textfield",
+      "validate": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "id": "Textfield_0",
+      "key": "customerName",
+      "layout": {
+        "row": "Row_0fvilc0"
+      }
+    },
+    {
+      "label": "Empresa do Cliente",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0q4o4g8",
+        "columns": null
+      },
+      "id": "Field_12hmpb1",
+      "key": "companyName",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 100,
+        "required": true
+      }
+    },
+    {
+      "label": "Modelo ",
+      "type": "textfield",
+      "id": "Textfield_2",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 100,
+        "required": true
+      },
+      "key": "MachineModel",
+      "layout": {
+        "row": "Row_0uv307t"
+      },
+      "description": "Vai apresentar modelo da máquina se cliente pretender"
+    },
+    {
+      "label": "Tipo",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0nl3x5o",
+        "columns": null
+      },
+      "id": "Field_0xuszu8",
+      "key": "MachineType",
+      "description": "Vai apresentar tipo de máquina cliente pretende",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 100,
+        "required": true
+      }
+    },
+    {
+      "label": "Requisitos da Máquina",
+      "type": "textarea",
+      "validate": {
+        "required": false,
+        "minLength": 2,
+        "maxLength": 1000
+      },
+      "id": "Textarea_1",
+      "key": "MachineRequirements",
+      "layout": {
+        "row": "Row_02r5dp8"
+      },
+      "description": "Pode apresentar outros requisitos que cliente pretende "
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_0f5onln">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "0d4ab51"
+  },
+  "schemaVersion": 17,
+  "id": "Form_ListOfMachines",
+  "components": [
+    {
+      "text": "##### Machine Information",
+      "type": "text",
+      "id": "Subheading_0",
+      "layout": {
+        "row": "row_0",
+        "columns": null
+      }
+    },
+    {
+      "label": "Description of the Machine",
+      "type": "textarea",
+      "id": "Textarea_1",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 500,
+        "required": false
+      },
+      "key": "machineDescription",
+      "layout": {
+        "row": "row_1",
+        "columns": null
+      }
+    },
+    {
+      "label": "MachineID",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0l6vptz",
+        "columns": null
+      },
+      "id": "Field_0qykhxw",
+      "key": "machineID",
+      "validate": {
+        "required": true,
+        "minLength": 0,
+        "maxLength": 1000
+      },
+      "description": "Formato do tipo: machine1 ou Machine2"
+    },
+    {
+      "label": "Accept or Reject the Machine",
+      "values": [
+        {
+          "value": "accept",
+          "label": "Accept"
+        },
+        {
+          "value": "reject",
+          "label": "Reject"
+        }
+      ],
+      "type": "radio",
+      "id": "Radio_2",
+      "validate": {
+        "required": true
+      },
+      "key": "Decision",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      }
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_3uv1mm1">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "0d4ab51"
+  },
+  "schemaVersion": 17,
+  "id": "Form_NovaInfo",
+  "components": [
+    {
+      "text": "# Requisitos máquina\n\nIndique todos requisitos que o cliente pretende na máquina",
+      "type": "text",
+      "layout": {
+        "row": "Row_0htste8",
+        "columns": null
+      },
+      "id": "Field_1wo40n3"
+    },
+    {
+      "label": "Nome do Cliente",
+      "type": "textfield",
+      "validate": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "id": "Textfield_0",
+      "key": "customerName",
+      "layout": {
+        "row": "Row_0fvilc0"
+      },
+      "disabled": true
+    },
+    {
+      "label": "Empresa do Cliente",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0q4o4g8",
+        "columns": null
+      },
+      "id": "Field_12hmpb1",
+      "key": "companyName",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 100,
+        "required": true
+      },
+      "disabled": true
+    },
+    {
+      "label": "Modelo ",
+      "type": "textfield",
+      "id": "Textfield_2",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 100,
+        "required": true
+      },
+      "key": "MachineModel",
+      "layout": {
+        "row": "Row_0uv307t"
+      },
+      "description": "Vai apresentar modelo da máquina se cliente pretender"
+    },
+    {
+      "label": "Tipo",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0nl3x5o",
+        "columns": null
+      },
+      "id": "Field_0xuszu8",
+      "key": "MachineType",
+      "description": "Vai apresentar tipo de máquina cliente pretende",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 100,
+        "required": true
+      }
+    },
+    {
+      "label": "Requisitos da Máquina",
+      "type": "textarea",
+      "validate": {
+        "required": false,
+        "minLength": 2,
+        "maxLength": 1000
+      },
+      "id": "Textarea_1",
+      "key": "MachineRequirements",
+      "layout": {
+        "row": "Row_02r5dp8"
+      },
+      "description": "Pode apresentar outros requisitos que cliente pretende "
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_11q6bek">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "1bcb3a3"
+  },
+  "schemaVersion": 17,
+  "id": "Form_MachineExistence",
+  "components": [
+    {
+      "text": "##### Machine Existence Confirmation",
+      "type": "text",
+      "id": "Subheading_0",
+      "layout": {
+        "row": "row_0",
+        "columns": null
+      }
+    },
+    {
+      "label": "Machine Exists",
+      "values": [
+        {
+          "value": "true",
+          "label": "True"
+        },
+        {
+          "value": "false",
+          "label": "False"
+        }
+      ],
+      "type": "radio",
+      "id": "Radio_1",
+      "validate": {
+        "required": true
+      },
+      "key": "MachineExists",
+      "layout": {
+        "row": "row_1",
+        "columns": null
+      }
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:laneSet id="LaneSet_01m9shl">
+      <bpmn:lane id="Lane_0gdmh2n" name="Employee">
+        <bpmn:flowNodeRef>Gateway_CustomerDecision</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>StartEvent_RequestMachineSale</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_IdentifyRequirements</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_TechnicalConsultancy</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_PresentMachines</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_ProvideAdicionalInformation</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1b92s11" name="Client">
+        <bpmn:flowNodeRef>EndEvent_MachineSaleDone</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_ReceiveContract</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1slb4y4" name="Storage">
+        <bpmn:flowNodeRef>Activity_SearchDB</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_ReserveMachine</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_DBVerification</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_0h6tbai</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_SaveSale</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_OrderMachine</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:exclusiveGateway id="Gateway_CustomerDecision" name="Customer Decision?">
+      <bpmn:incoming>Flow_05l7scf</bpmn:incoming>
+      <bpmn:outgoing>Flow_MachineRejected</bpmn:outgoing>
+      <bpmn:outgoing>Flow_MachineAccepted</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:startEvent id="StartEvent_RequestMachineSale" name="Request Machine Sale">
+      <bpmn:outgoing>Flow_044lgtg</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Task_IdentifyRequirements" name="Identify Requirements">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_3q0vpne" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_044lgtg</bpmn:incoming>
+      <bpmn:outgoing>Flow_01vxss3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Task_TechnicalConsultancy" name="Technical Consultancy">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="techinicalCunsultancy" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_01vxss3</bpmn:incoming>
+      <bpmn:incoming>Flow_07mi8cd</bpmn:incoming>
+      <bpmn:outgoing>Flow_1xyli22</bpmn:outgoing>
+      <bpmn:property id="Property_0v9pyei" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_0szye2u">
+        <bpmn:sourceRef>DataStoreReference_MachinesDB</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0v9pyei</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="Task_PresentMachines" name="Present Machines">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_0f5onln" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1xyli22</bpmn:incoming>
+      <bpmn:outgoing>Flow_05l7scf</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Task_ProvideAdicionalInformation" name="Provide Adicional Information">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_3uv1mm1" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_MachineRejected</bpmn:incoming>
+      <bpmn:outgoing>Flow_07mi8cd</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:dataStoreReference id="DataStoreReference_MachinesDB" name="MachinesDB" />
+    <bpmn:serviceTask id="Activity_SearchDB" name="Search DB">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="searchDB" />
+        <zeebe:ioMapping>
+          <zeebe:input source="=machineID" target="machineID" />
+          <zeebe:output source="=machineID" target="machineID" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_MachineAccepted</bpmn:incoming>
+      <bpmn:outgoing>Flow_0gtd8gh</bpmn:outgoing>
+      <bpmn:property id="Property_0dpzypu" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_Storage">
+        <bpmn:sourceRef>DataStoreReference_StorageDB</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0dpzypu</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:dataStoreReference id="DataStoreReference_StorageDB" name="StorageDB" />
+    <bpmn:serviceTask id="Activity_ReserveMachine" name="Reserve Machine">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="reserveMachine" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_MachineExist</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ful3lf</bpmn:outgoing>
+      <bpmn:property id="Property_0nnfwqb" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_1r9d9vy">
+        <bpmn:sourceRef>DataStoreReference_StorageDB</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0nnfwqb</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_DBVerification" name="DB Verification" default="Flow_MachineDontExist">
+      <bpmn:incoming>Flow_0gtd8gh</bpmn:incoming>
+      <bpmn:outgoing>Flow_MachineDontExist</bpmn:outgoing>
+      <bpmn:outgoing>Flow_MachineExist</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:exclusiveGateway id="Gateway_0h6tbai">
+      <bpmn:incoming>Flow_0vqqlwj</bpmn:incoming>
+      <bpmn:incoming>Flow_0ful3lf</bpmn:incoming>
+      <bpmn:outgoing>Flow_0w41f4c</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="EndEvent_MachineSaleDone" name="Machine Sale Done">
+      <bpmn:incoming>Flow_18ks2xu</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:manualTask id="Task_ReceiveContract" name="Receive Contract">
+      <bpmn:incoming>Flow_034lqn6</bpmn:incoming>
+      <bpmn:outgoing>Flow_18ks2xu</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:serviceTask id="Activity_SaveSale" name="Save Sale">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="saveSale" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0w41f4c</bpmn:incoming>
+      <bpmn:outgoing>Flow_034lqn6</bpmn:outgoing>
+      <bpmn:property id="Property_0lgrdyb" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_13jsy23">
+        <bpmn:sourceRef>DataStoreReference_SalesBD</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0lgrdyb</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:dataStoreReference id="DataStoreReference_SalesBD" name="SalesBD" />
+    <bpmn:sendTask id="Activity_OrderMachine" name="Order Machine">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="orderMachine" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_MachineDontExist</bpmn:incoming>
+      <bpmn:outgoing>Flow_0vqqlwj</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:sequenceFlow id="Flow_05l7scf" sourceRef="Task_PresentMachines" targetRef="Gateway_CustomerDecision" />
+    <bpmn:sequenceFlow id="Flow_MachineAccepted" name="Machine Accepted" sourceRef="Gateway_CustomerDecision" targetRef="Activity_SearchDB">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=Decision = "accept"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_MachineRejected" name="Machine Rejected" sourceRef="Gateway_CustomerDecision" targetRef="Task_ProvideAdicionalInformation">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=Decision = "reject"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_044lgtg" sourceRef="StartEvent_RequestMachineSale" targetRef="Task_IdentifyRequirements" />
+    <bpmn:sequenceFlow id="Flow_01vxss3" sourceRef="Task_IdentifyRequirements" targetRef="Task_TechnicalConsultancy" />
+    <bpmn:sequenceFlow id="Flow_07mi8cd" sourceRef="Task_ProvideAdicionalInformation" targetRef="Task_TechnicalConsultancy" />
+    <bpmn:sequenceFlow id="Flow_1xyli22" sourceRef="Task_TechnicalConsultancy" targetRef="Task_PresentMachines" />
+    <bpmn:sequenceFlow id="Flow_0gtd8gh" sourceRef="Activity_SearchDB" targetRef="Gateway_DBVerification" />
+    <bpmn:sequenceFlow id="Flow_MachineExist" name="Machine Exist" sourceRef="Gateway_DBVerification" targetRef="Activity_ReserveMachine">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=MachineExists = true</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0ful3lf" sourceRef="Activity_ReserveMachine" targetRef="Gateway_0h6tbai" />
+    <bpmn:sequenceFlow id="Flow_MachineDontExist" name="Machine Dont Exist" sourceRef="Gateway_DBVerification" targetRef="Activity_OrderMachine" />
+    <bpmn:sequenceFlow id="Flow_0vqqlwj" sourceRef="Activity_OrderMachine" targetRef="Gateway_0h6tbai" />
+    <bpmn:sequenceFlow id="Flow_0w41f4c" sourceRef="Gateway_0h6tbai" targetRef="Activity_SaveSale" />
+    <bpmn:sequenceFlow id="Flow_18ks2xu" sourceRef="Task_ReceiveContract" targetRef="EndEvent_MachineSaleDone" />
+    <bpmn:sequenceFlow id="Flow_034lqn6" sourceRef="Activity_SaveSale" targetRef="Task_ReceiveContract" />
+  </bpmn:process>
+  <bpmn:message id="Message_0pgjhlq" name="Message_ReceiveNotification">
+    <bpmn:extensionElements>
+      <zeebe:subscription correlationKey="=ReceiveNotification" />
+    </bpmn:extensionElements>
+  </bpmn:message>
+  <bpmn:message id="Message_05rol48" name="Receive Notification">
+    <bpmn:extensionElements>
+      <zeebe:subscription correlationKey="=ReceiveNotification" />
+    </bpmn:extensionElements>
+  </bpmn:message>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1l1vaja">
+      <bpmndi:BPMNShape id="Participant_17pwaka_di" bpmnElement="Participant_MachineSale" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="1770" height="640" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0gdmh2n_di" bpmnElement="Lane_0gdmh2n" isHorizontal="true">
+        <dc:Bounds x="190" y="80" width="1740" height="313" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1b92s11_di" bpmnElement="Lane_1b92s11" isHorizontal="true">
+        <dc:Bounds x="190" y="600" width="1740" height="120" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1slb4y4_di" bpmnElement="Lane_1slb4y4" isHorizontal="true">
+        <dc:Bounds x="190" y="393" width="1740" height="207" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0s4qr44_di" bpmnElement="Gateway_CustomerDecision" isMarkerVisible="true">
+        <dc:Bounds x="905" y="255" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="875" y="286" width="51" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_RequestMachineSale" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="271" y="262" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="247" y="305" width="88" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1mxhrmq_di" bpmnElement="Task_IdentifyRequirements">
+        <dc:Bounds x="360" y="240" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1upvcxq_di" bpmnElement="Task_TechnicalConsultancy">
+        <dc:Bounds x="530" y="240" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1qy774z_di" bpmnElement="Task_PresentMachines">
+        <dc:Bounds x="700" y="240" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0v5xniv_di" bpmnElement="Task_ProvideAdicionalInformation">
+        <dc:Bounds x="700" y="110" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_1ngudis_di" bpmnElement="DataStoreReference_MachinesDB">
+        <dc:Bounds x="465" y="425" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="461" y="482" width="62" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_04wc0t2_di" bpmnElement="Activity_SearchDB">
+        <dc:Bounds x="1080" y="450" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_0cnya1r_di" bpmnElement="DataStoreReference_StorageDB">
+        <dc:Bounds x="1205" y="635" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1204" y="692" width="54" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_19mzou3_di" bpmnElement="Activity_ReserveMachine">
+        <dc:Bounds x="1400" y="510" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0blrgej_di" bpmnElement="Gateway_DBVerification" isMarkerVisible="true">
+        <dc:Bounds x="1285" y="465" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1324" y="493" width="73" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0h6tbai_di" bpmnElement="Gateway_0h6tbai" isMarkerVisible="true">
+        <dc:Bounds x="1545" y="465" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_05zmntt_di" bpmnElement="EndEvent_MachineSaleDone" bioc:stroke="#205022" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#205022">
+        <dc:Bounds x="1873" y="642" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1859" y="685" width="69" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0wyr6sw_di" bpmnElement="Task_ReceiveContract">
+        <dc:Bounds x="1670" y="620" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0dt3m84_di" bpmnElement="Activity_SaveSale">
+        <dc:Bounds x="1670" y="450" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_13kmrw3_di" bpmnElement="DataStoreReference_SalesBD">
+        <dc:Bounds x="1695" y="315" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1699" y="285" width="44" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0omjj1a_di" bpmnElement="Activity_OrderMachine">
+        <dc:Bounds x="1400" y="400" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_05l7scf_di" bpmnElement="Flow_05l7scf">
+        <di:waypoint x="800" y="280" />
+        <di:waypoint x="905" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1nqv4v9_di" bpmnElement="Flow_MachineAccepted">
+        <di:waypoint x="930" y="305" />
+        <di:waypoint x="930" y="490" />
+        <di:waypoint x="1080" y="490" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="983" y="493" width="49" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1bsffcb_di" bpmnElement="Flow_MachineRejected">
+        <di:waypoint x="930" y="255" />
+        <di:waypoint x="930" y="150" />
+        <di:waypoint x="800" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="866" y="197" width="87" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_044lgtg_di" bpmnElement="Flow_044lgtg">
+        <di:waypoint x="307" y="280" />
+        <di:waypoint x="360" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_01vxss3_di" bpmnElement="Flow_01vxss3">
+        <di:waypoint x="460" y="280" />
+        <di:waypoint x="530" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_07mi8cd_di" bpmnElement="Flow_07mi8cd">
+        <di:waypoint x="700" y="150" />
+        <di:waypoint x="580" y="150" />
+        <di:waypoint x="580" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xyli22_di" bpmnElement="Flow_1xyli22">
+        <di:waypoint x="630" y="280" />
+        <di:waypoint x="700" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0gtd8gh_di" bpmnElement="Flow_0gtd8gh">
+        <di:waypoint x="1180" y="490" />
+        <di:waypoint x="1285" y="490" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1y4hucl_di" bpmnElement="Flow_MachineExist">
+        <di:waypoint x="1310" y="515" />
+        <di:waypoint x="1310" y="550" />
+        <di:waypoint x="1400" y="550" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1292" y="530" width="68" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ful3lf_di" bpmnElement="Flow_0ful3lf">
+        <di:waypoint x="1500" y="550" />
+        <di:waypoint x="1570" y="550" />
+        <di:waypoint x="1570" y="515" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0c3tknt_di" bpmnElement="Flow_MachineDontExist">
+        <di:waypoint x="1310" y="465" />
+        <di:waypoint x="1310" y="440" />
+        <di:waypoint x="1400" y="440" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1305" y="406" width="70" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0vqqlwj_di" bpmnElement="Flow_0vqqlwj">
+        <di:waypoint x="1500" y="440" />
+        <di:waypoint x="1570" y="440" />
+        <di:waypoint x="1570" y="465" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0w41f4c_di" bpmnElement="Flow_0w41f4c">
+        <di:waypoint x="1595" y="490" />
+        <di:waypoint x="1670" y="490" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18ks2xu_di" bpmnElement="Flow_18ks2xu">
+        <di:waypoint x="1770" y="660" />
+        <di:waypoint x="1873" y="660" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_034lqn6_di" bpmnElement="Flow_034lqn6">
+        <di:waypoint x="1720" y="530" />
+        <di:waypoint x="1720" y="620" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_0szye2u_di" bpmnElement="DataInputAssociation_0szye2u">
+        <di:waypoint x="503" y="425" />
+        <di:waypoint x="559" y="320" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_1xmovsx_di" bpmnElement="DataInputAssociation_Storage">
+        <di:waypoint x="1219" y="635" />
+        <di:waypoint x="1170" y="530" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_1r9d9vy_di" bpmnElement="DataInputAssociation_1r9d9vy">
+        <di:waypoint x="1255" y="651" />
+        <di:waypoint x="1423" y="590" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_13jsy23_di" bpmnElement="DataInputAssociation_13jsy23">
+        <di:waypoint x="1720" y="365" />
+        <di:waypoint x="1720" y="450" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
